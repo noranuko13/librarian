@@ -1,0 +1,19 @@
+review_version: 5.0
+language: ja
+debug: null
+stylesheet: ["style.css"]
+toclevel: 2
+secnolevel: 2
+toc: true
+epubmaker:
+  htmlext: xhtml
+texstyle: ["reviewmacro"]
+texdocumentclass: ["review-jsbook", "media=ebook,paper=a4,oneside,openany,fontsize=11pt,head_space=22mm,gutter=15mm,line_length=50zw,number_of_lines=42"]
+pdfmaker:
+  colophon: true
+  boxsetting:
+    note:
+      style: leftsidelinebox
+    warning:
+      style: squarebox
+      options: "left=1mm,right=1mm,top=2mm,bottom=2mm,boxrule=0.4mm,colback=yellow!14,colbacktitle=yellow!70!orange"
