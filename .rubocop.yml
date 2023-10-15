@@ -1,0 +1,16 @@
+require:
+  - rubocop-performance
+  - rubocop-rake
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - tmp/**/*
+    - upgrade/**/*
+
+Style/Documentation:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 2
