@@ -1,0 +1,9 @@
+version: '3'
+services:
+  review:
+    build: .
+    environment:
+      - TZ=Asia/Tokyo
+    volumes:
+      - .:/librarian
+    tty: true
