@@ -26,3 +26,8 @@ $ exit
 # コンテナを停止する
 $ docker compose down review
 ```
+
+```shell
+# アップグレード差分を更新する
+$ review-init upgrade --without-doc --force
+```
