@@ -83,6 +83,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  rainbow
   rake (= 13.0.6)
   review (= 5.5.0)
   rspec
