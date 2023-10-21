@@ -22,7 +22,7 @@ $ docker compose up review -d
 # コンテナに入る
 $ docker compose exec review bash
 # 製本する
-$ rake bookbinding:pdf
+$ rake bookbinding:pdf[repository/inspect,tech]
 # コンテナから出る
 $ exit
 # コンテナを停止する
