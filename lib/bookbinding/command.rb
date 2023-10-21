@@ -4,9 +4,13 @@ module Bookbinding
   class Command
     # @param [Rake::TaskArguments] args
     def initialize(args)
+      @termout = Termout.new
       @arguments = Bookbinding::Arguments.new(args)
     end
 
-    def execute; end
+    def execute
+      @termout.info '製本を開始します'
+      Process::Setup.new.run
+    end
   end
 end
