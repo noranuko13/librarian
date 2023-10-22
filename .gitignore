@@ -211,5 +211,6 @@ fabric.properties
 
 
 ## Project.gitignore
+dist/
 shelves/*
 !shelves/repository/

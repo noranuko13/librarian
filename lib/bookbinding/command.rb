@@ -14,6 +14,8 @@ module Bookbinding
       Process::Collect.new(@arguments).run
       Process::Merge.new(@arguments).run
       Process::Review.new.run
+      Process::Dist.new(@arguments).run
+      @termout.success '製本を終了します'
     end
   end
 end
