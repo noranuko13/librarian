@@ -11,6 +11,7 @@ module Bookbinding
     def execute
       @termout.info '製本を開始します'
       Process::Setup.new.run
+      Process::Collect.new(@arguments).run
     end
   end
 end
