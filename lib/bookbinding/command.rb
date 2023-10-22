@@ -13,6 +13,7 @@ module Bookbinding
       Process::Setup.new.run
       Process::Collect.new(@arguments).run
       Process::Merge.new(@arguments).run
+      Process::Review.new.run
     end
   end
 end
