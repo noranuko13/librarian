@@ -12,6 +12,7 @@ module Bookbinding
       @termout.info '製本を開始します'
       Process::Setup.new.run
       Process::Collect.new(@arguments).run
+      Process::Merge.new(@arguments).run
     end
   end
 end

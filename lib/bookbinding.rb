@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'bookbinding/process/collect'
+require_relative 'bookbinding/process/merge'
 require_relative 'bookbinding/process/setup'
 
 require_relative 'bookbinding/arguments'
