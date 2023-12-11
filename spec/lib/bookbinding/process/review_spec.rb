@@ -1,16 +1,12 @@
 # frozen_string_literal: true
 
 require 'rake_helper'
+require 'support/contexts/shared_arguments'
 
 RSpec.describe Bookbinding::Process::Review do
   subject(:run) { described_class.new.run }
 
-  let(:values) { %w[repository/inspect tech] }
-
-  let(:arguments) do
-    args = Rake::TaskArguments.new(Bookbinding::Arguments::NAMES, values)
-    Bookbinding::Arguments.new(args)
-  end
+  include_context 'shared arguments'
 
   before do
     allow($stdout).to receive(:write)

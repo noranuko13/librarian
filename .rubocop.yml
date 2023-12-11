@@ -14,3 +14,7 @@ Style/Documentation:
 
 RSpec/MultipleExpectations:
   Max: 2
+
+RSpec/ContextWording:
+  AllowedPatterns:
+    - shared
