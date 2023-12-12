@@ -2,12 +2,10 @@
 
 require 'rake_helper'
 require 'support/contexts/shared_arguments'
+require 'support/contexts/without_stdout'
 
 RSpec.describe Bookbinding::Arguments do
-  before do
-    allow($stdout).to receive(:write)
-  end
-
+  include_context 'without stdout'
   include_context 'shared arguments'
 
   describe '#initialize' do

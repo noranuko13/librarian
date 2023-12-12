@@ -2,14 +2,15 @@
 
 require 'rake_helper'
 require 'support/contexts/shared_arguments'
+require 'support/contexts/without_stdout'
 
 RSpec.describe Bookbinding::Process::Merge do
   subject(:run) { described_class.new(arguments).run }
 
+  include_context 'without stdout'
   include_context 'shared arguments'
 
   before do
-    allow($stdout).to receive(:write)
     Bookbinding::Process::Setup.new.run
     Bookbinding::Process::Collect.new(arguments).run
   end

@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
 require 'rake_helper'
+require 'support/contexts/without_stdout'
 
 RSpec.describe Bookbinding::Process::Setup do
   subject(:run) { described_class.new.run }
 
-  before do
-    allow($stdout).to receive(:write)
-  end
+  include_context 'without stdout'
 
   let!(:filesystem_instance_double) do
     filesystem_instance_double = instance_double(Bookbinding::Filesystem)

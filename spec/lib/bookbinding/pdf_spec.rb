@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 require 'rake_helper'
+require 'support/contexts/without_stdout'
 
 RSpec.describe 'bookbinding:pdf', type: :task do
-  before do
-    allow($stdout).to receive(:write)
-  end
+  include_context 'without stdout'
 
   context 'when valid params' do
     let(:task) { Rake.application['bookbinding:pdf'] }

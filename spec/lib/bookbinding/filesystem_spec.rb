@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 require 'rake_helper'
+require 'support/contexts/without_stdout'
 
 RSpec.describe Bookbinding::Filesystem do
   let!(:test_dir) { 'tmp/rspec' }
 
+  include_context 'without stdout'
+
   before do
-    allow($stdout).to receive(:write)
     FileUtils.rm_rf(test_dir)
   end
 
