@@ -7,6 +7,9 @@ ARG DIR="/librarian"
 RUN mkdir ${DIR}
 WORKDIR ${DIR}
 
+# License Finderをインストールする
+RUN gem install license_finder
+
 # 依存関係をインストールする
 ADD Gemfile ${DIR}/Gemfile
 ADD Gemfile.lock ${DIR}/Gemfile.lock
