@@ -1,7 +1,7 @@
 # librarian
 
 
-## 動作環境
+## Requirements
 
 Docker, Docker Compose がインストールされている必要がある。
 
