@@ -12,6 +12,7 @@
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/upgrade" />
       <excludeFolder url="file://$MODULE_DIR$/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/jackets" />
       <excludeFolder url="file://$MODULE_DIR$/shelves" />
     </content>
     <orderEntry type="inheritedJdk" />
