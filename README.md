@@ -35,6 +35,40 @@ $ review-init upgrade --without-doc --force
 ```
 
 
+## Mechanism
+
+全体の流れは [Bookbinding::Command](./lib/bookbinding/command.rb) および Process モジュールの各クラスを参照ください。
+
+実行していることは単純で、
+- 素材ファイルを作業ディレクトリにコピー・マージする。
+- Re:VIEW を実行する。
+- 成果物を dist ディレクトリに格納する。
+
+しています。
+
+利用する上で重要なのは [Process::Collect](./lib/bookbinding/process/collect.rb), [Process::Merge](./lib/bookbinding/process/merge.rb) です。  
+ファイルの優先順位・マージの詳細は、最新のソースコードを参照ください。
+
+
+## How to
+
+jackets, shelves の各ディレクトリは .gitignore で除外されています。  
+直下に別リポジトリで管理している jacket, shelve を設置することで、装丁・紙束を入れ替えできます。
+
+### jackets
+
+書籍の装丁の部分を取り出したディレクトリです。
+
+種類は気が向いたら増やしますが、元々の目的が「業務で手順書やマニュアルを作成するときに、同じ装丁の管理しんどい」なので、
+今のところ tech 以外を増やす予定はありません。
+
+### shelves
+
+書籍の本文が書かれている紙束の部分を取り出したディレクトリです。
+
+１リポジトリに対して、複数の書籍を格納することを想定しています。
+
+
 ## License
 
 Re:VIEW が LGPL-2.1 license です。
