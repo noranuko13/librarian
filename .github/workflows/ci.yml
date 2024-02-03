@@ -13,3 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: docker compose pull
+      - uses: satackey/action-docker-layer-caching@v0.0.11
+        continue-on-error: true
+      - run: docker compose build
+      - run: docker compose up -d
+      - run: docker compose exec review rubocop --color
+      - run: docker compose exec review rspec
