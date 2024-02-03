@@ -4,6 +4,8 @@ services:
     build: .
     environment:
       - TZ=Asia/Tokyo
+      - CLICOLOR=1
+      - CLICOLOR_FORCE=1
     volumes:
       - .:/librarian
     tty: true
