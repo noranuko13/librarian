@@ -1,5 +1,5 @@
 # パッケージを更新する
-FROM vvakame/review:5.5
+FROM vvakame/review:5.9
 RUN apt-get update -qq
 
 # アプリ専用のディレクトリを定義する
