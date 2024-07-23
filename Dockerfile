@@ -1,6 +1,8 @@
 # パッケージを更新する
 FROM vvakame/review:5.9
 RUN apt-get update -qq
+RUN apt-get install -y --no-install-recommends \
+    graphviz
 
 # アプリ専用のディレクトリを定義する
 ARG DIR="/librarian"
