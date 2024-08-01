@@ -18,7 +18,7 @@ $ docker compose version
 $ docker compose build
 $ docker compose build --no-cache
 # コンテナを起動する
-$ docker compose up review -d
+$ docker compose up -d
 # コンテナに入る
 $ docker compose exec review bash
 # 製本する
@@ -26,7 +26,7 @@ $ rake bookbinding:pdf[repository/inspect,tech]
 # コンテナから出る
 $ exit
 # コンテナを停止する
-$ docker compose down review
+$ docker compose down
 ```
 
 ```shell

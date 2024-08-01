@@ -110,19 +110,14 @@ notice（注意）・caution（警告）・important（重要）は、warning（
 
 //graph[testdot][plantuml][testdot]{
 @startuml
-testdot
+!define URL http://resources:80/shelves/repository/inspect/plantumls
+!include URL/chaps01/testdot.puml
 @enduml
 //}
 
 //graph[choice][plantuml][choice]{
 @startuml
-state "猫" as neko
-state "犬" as inu
-
-state c <<choice>>
-
-[*] --> c
-c --> neko : 魚
-c --> inu : 骨
+!define URL http://resources:80/shelves/repository/inspect/plantumls
+!include URL/chaps01/choice.puml
 @enduml
 //}

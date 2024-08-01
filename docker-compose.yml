@@ -8,3 +8,7 @@ services:
     volumes:
       - .:/librarian
     tty: true
+  resources:
+    image: nginx:1.27.0
+    volumes:
+      - ./shelves:/usr/share/nginx/html/shelves

@@ -1,0 +1,10 @@
+@startuml
+state "猫" as neko
+state "犬" as inu
+
+state c <<choice>>
+
+[*] --> c
+c --> neko : 魚
+c --> inu : 骨
+@enduml
