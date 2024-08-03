@@ -67,6 +67,8 @@ RSpec.describe Bookbinding::Process::Collect do
   describe '#copy_from_shelves' do
     it_behaves_like 'collector', %w[
       tmp/workbench/images/chaps01/001.png
+      tmp/workbench/plantumls/chaps01/choice.puml
+      tmp/workbench/plantumls/chaps01/testdot.puml
       tmp/workbench/appendix01.re
       tmp/workbench/appendix02.re
       tmp/workbench/catalog.yml

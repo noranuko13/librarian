@@ -40,8 +40,8 @@ module Bookbinding
 
       def copy_from_shelves
         @termout.debug 'copy_from_shelves'
-        Dir["#{@arguments.shelves_dir}/images/**/*", "#{@arguments.shelves_dir}/**/*.re",
-            "#{@arguments.shelves_dir}/catalog.yml"].each do |src|
+        Dir["#{@arguments.shelves_dir}/images/**/*", "#{@arguments.shelves_dir}/plantumls/**/*",
+            "#{@arguments.shelves_dir}/**/*.re", "#{@arguments.shelves_dir}/catalog.yml"].each do |src|
           next if FileTest.directory?(src)
 
           @filesystem.copy src, src.sub(@arguments.shelves_dir, Constant::WORKBENCH_DIR)
