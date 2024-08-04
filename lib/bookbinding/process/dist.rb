@@ -13,13 +13,13 @@ module Bookbinding
       def run
         @termout.info '生成物をdistに配置します'
         Dir[
-          "#{Constant::WORKBENCH_DIR}/**/*.{pdf,epub,html}",
-          "#{Constant::WORKBENCH_DIR}/**/*{-pdf,-text,-idgxml}",
-          "#{Constant::WORKBENCH_DIR}/**/webroot",
+          "#{@arguments.workbench_dir}/**/*.{pdf,epub,html}",
+          "#{@arguments.workbench_dir}/**/*{-pdf,-text,-idgxml}",
+          "#{@arguments.workbench_dir}/**/webroot",
         ].each do |src|
           next if FileTest.directory?(src)
 
-          @filesystem.copy src, src.sub(Constant::WORKBENCH_DIR, @arguments.dist_dir)
+          @filesystem.copy src, src.sub(@arguments.workbench_dir, @arguments.dist_dir)
         end
       end
     end

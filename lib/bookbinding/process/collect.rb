@@ -25,7 +25,7 @@ module Bookbinding
             "#{Constant::UPGRADE_DIR}/Rakefile"].each do |src|
           next if FileTest.directory?(src)
 
-          @filesystem.copy src, src.sub(Constant::UPGRADE_DIR, Constant::WORKBENCH_DIR)
+          @filesystem.copy src, src.sub(Constant::UPGRADE_DIR, @arguments.workbench_dir)
         end
       end
 
@@ -34,7 +34,7 @@ module Bookbinding
         Dir["#{@arguments.jackets_dir}/sty/**/*"].each do |src|
           next if FileTest.directory?(src)
 
-          @filesystem.copy src, src.sub(@arguments.jackets_dir, Constant::WORKBENCH_DIR)
+          @filesystem.copy src, src.sub(@arguments.jackets_dir, @arguments.workbench_dir)
         end
       end
 
@@ -44,7 +44,7 @@ module Bookbinding
             "#{@arguments.shelves_dir}/**/*.re", "#{@arguments.shelves_dir}/catalog.yml"].each do |src|
           next if FileTest.directory?(src)
 
-          @filesystem.copy src, src.sub(@arguments.shelves_dir, Constant::WORKBENCH_DIR)
+          @filesystem.copy src, src.sub(@arguments.shelves_dir, @arguments.workbench_dir)
         end
       end
     end

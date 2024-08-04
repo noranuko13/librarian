@@ -23,7 +23,7 @@ module Bookbinding
 
       # @param [Symbol] type
       def review_rake(type)
-        @filesystem.pwd(Constant::WORKBENCH_DIR) do
+        @filesystem.pwd(@arguments.workbench_dir) do
           # @type [Process::Status] status
           status = Open3.popen2e("rake #{type}") do |stdin, stdout_stderr, wait_thread|
             stdin.close

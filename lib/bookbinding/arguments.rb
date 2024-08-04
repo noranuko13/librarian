@@ -29,5 +29,10 @@ module Bookbinding
     def jackets_dir
       File.join(Constant::JACKETS_DIR, @args[:jacket])
     end
+
+    # @return [String]
+    def workbench_dir
+      Constant::WORKBENCH_DIR
+    end
   end
 end

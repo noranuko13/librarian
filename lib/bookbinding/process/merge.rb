@@ -28,14 +28,14 @@ module Bookbinding
         @termout.debug 'shelve', shelve
         merged = jacket.merge(shelve)
         @termout.info 'merged', merged
-        path = File.join(Constant::WORKBENCH_DIR, 'config.yml')
+        path = File.join(@arguments.workbench_dir, 'config.yml')
         File.write(path, YAML.dump(merged).gsub(/^---$/, ''))
       end
 
       def merge_style
         @termout.debug 'merge_style'
 
-        File.open(File.join(Constant::WORKBENCH_DIR, 'style.css'), 'w') do |f|
+        File.open(File.join(@arguments.workbench_dir, 'style.css'), 'w') do |f|
           jacket_path = File.join(@arguments.jackets_dir, 'style.css')
           f.puts(File.read(jacket_path)) if File.exist? jacket_path
           shelve_path = File.join(@arguments.shelves_dir, 'style.css')
