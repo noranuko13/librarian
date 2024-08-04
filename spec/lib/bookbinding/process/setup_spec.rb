@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 require 'rake_helper'
+require 'support/contexts/shared_arguments'
 require 'support/contexts/without_stdout'
 
 RSpec.describe Bookbinding::Process::Setup do
-  subject(:run) { described_class.new.run }
+  subject(:run) { described_class.new(arguments).run }
 
   include_context 'without stdout'
+  include_context 'shared arguments'
 
   let!(:filesystem_instance_double) do
     filesystem_instance_double = instance_double(Bookbinding::Filesystem)

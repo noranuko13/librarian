@@ -11,7 +11,7 @@ RSpec.describe Bookbinding::Process::Collect do
   include_context 'shared arguments'
 
   before do
-    Bookbinding::Process::Setup.new.run
+    Bookbinding::Process::Setup.new(arguments).run
   end
 
   shared_examples 'collector' do |copied_files, ignored_files|

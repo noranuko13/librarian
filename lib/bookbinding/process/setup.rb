@@ -3,9 +3,11 @@
 module Bookbinding
   module Process
     class Setup
-      def initialize
+      # @param [Bookbinding::Arguments] arguments
+      def initialize(arguments)
         @termout = Termout.new
         @filesystem = Filesystem.new
+        @arguments = arguments
       end
 
       def run

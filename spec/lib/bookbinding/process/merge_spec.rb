@@ -11,7 +11,7 @@ RSpec.describe Bookbinding::Process::Merge do
   include_context 'shared arguments'
 
   before do
-    Bookbinding::Process::Setup.new.run
+    Bookbinding::Process::Setup.new(arguments).run
     Bookbinding::Process::Collect.new(arguments).run
   end
 

@@ -7,9 +7,11 @@ module Bookbinding
     class Review
       class ReviewError < StandardError; end
 
-      def initialize
+      # @param [Bookbinding::Arguments] arguments
+      def initialize(arguments)
         @termout = Termout.new
         @filesystem = Filesystem.new
+        @arguments = arguments
       end
 
       def run

@@ -10,10 +10,10 @@ module Bookbinding
 
     def execute
       @termout.info '製本を開始します'
-      Process::Setup.new.run
+      Process::Setup.new(@arguments).run
       Process::Collect.new(@arguments).run
       Process::Merge.new(@arguments).run
-      Process::Review.new.run
+      Process::Review.new(@arguments).run
       Process::Dist.new(@arguments).run
       @termout.success '製本を終了します'
     end

@@ -5,13 +5,13 @@ require 'support/contexts/shared_arguments'
 require 'support/contexts/without_stdout'
 
 RSpec.describe Bookbinding::Process::Review do
-  subject(:run) { described_class.new.run }
+  subject(:run) { described_class.new(arguments).run }
 
   include_context 'without stdout'
   include_context 'shared arguments'
 
   before do
-    Bookbinding::Process::Setup.new.run
+    Bookbinding::Process::Setup.new(arguments).run
     Bookbinding::Process::Collect.new(arguments).run
     Bookbinding::Process::Merge.new(arguments).run
   end
