@@ -29,56 +29,56 @@ RSpec.describe Bookbinding::Process::Collect do
 
   describe '#copy_from_upgrade' do
     it_behaves_like 'collector', %w[
-      tmp/workbench/lib/tasks/review.rake
-      tmp/workbench/sty/gentombow.sty
-      tmp/workbench/sty/jsbook.cls
-      tmp/workbench/sty/jumoline.sty
-      tmp/workbench/sty/plistings.sty
-      tmp/workbench/sty/review-base.sty
-      tmp/workbench/sty/review-custom.sty
-      tmp/workbench/sty/review-jsbook.cls
-      tmp/workbench/sty/review-style.sty
-      tmp/workbench/sty/review-tcbox.sty
-      tmp/workbench/sty/reviewmacro.sty
-      tmp/workbench/Rakefile
+      tmp/workbench/repository/inspect/lib/tasks/review.rake
+      tmp/workbench/repository/inspect/sty/gentombow.sty
+      tmp/workbench/repository/inspect/sty/jsbook.cls
+      tmp/workbench/repository/inspect/sty/jumoline.sty
+      tmp/workbench/repository/inspect/sty/plistings.sty
+      tmp/workbench/repository/inspect/sty/review-base.sty
+      tmp/workbench/repository/inspect/sty/review-custom.sty
+      tmp/workbench/repository/inspect/sty/review-jsbook.cls
+      tmp/workbench/repository/inspect/sty/review-style.sty
+      tmp/workbench/repository/inspect/sty/review-tcbox.sty
+      tmp/workbench/repository/inspect/sty/reviewmacro.sty
+      tmp/workbench/repository/inspect/Rakefile
     ], %w[
-      tmp/workbench/images/cover.jpg
-      tmp/workbench/images/cover-a5.ai
-      tmp/workbench/sty/README.md
-      tmp/workbench/.gitignore
-      tmp/workbench/config.yml
-      tmp/workbench/Gemfile
-      tmp/workbench/style.css
+      tmp/workbench/repository/inspect/images/cover.jpg
+      tmp/workbench/repository/inspect/images/cover-a5.ai
+      tmp/workbench/repository/inspect/sty/README.md
+      tmp/workbench/repository/inspect/.gitignore
+      tmp/workbench/repository/inspect/config.yml
+      tmp/workbench/repository/inspect/Gemfile
+      tmp/workbench/repository/inspect/style.css
     ]
     # copy_from_shelves
-    # tmp/workbench/catalog.yml
+    # tmp/workbench/repository/inspect/catalog.yml
   end
 
   describe '#copy_from_jackets' do
     it_behaves_like 'collector', %w[
-      tmp/workbench/sty/review-custom.sty
+      tmp/workbench/repository/inspect/sty/review-custom.sty
     ], %w[
-      tmp/workbench/config.yml
-      tmp/workbench/README.md
-      tmp/workbench/style.css
+      tmp/workbench/repository/inspect/config.yml
+      tmp/workbench/repository/inspect/README.md
+      tmp/workbench/repository/inspect/style.css
     ]
   end
 
   describe '#copy_from_shelves' do
     it_behaves_like 'collector', %w[
-      tmp/workbench/images/chaps01/001.png
-      tmp/workbench/plantumls/chaps01/choice.puml
-      tmp/workbench/plantumls/chaps01/testdot.puml
-      tmp/workbench/appendix01.re
-      tmp/workbench/appendix02.re
-      tmp/workbench/catalog.yml
-      tmp/workbench/chaps01.re
-      tmp/workbench/chaps02.re
-      tmp/workbench/postdef.re
-      tmp/workbench/predef.re
+      tmp/workbench/repository/inspect/images/chaps01/001.png
+      tmp/workbench/repository/inspect/plantumls/chaps01/choice.puml
+      tmp/workbench/repository/inspect/plantumls/chaps01/testdot.puml
+      tmp/workbench/repository/inspect/appendix01.re
+      tmp/workbench/repository/inspect/appendix02.re
+      tmp/workbench/repository/inspect/catalog.yml
+      tmp/workbench/repository/inspect/chaps01.re
+      tmp/workbench/repository/inspect/chaps02.re
+      tmp/workbench/repository/inspect/postdef.re
+      tmp/workbench/repository/inspect/predef.re
     ], %w[
-      tmp/workbench/config.yml
-      tmp/workbench/style.css
+      tmp/workbench/repository/inspect/config.yml
+      tmp/workbench/repository/inspect/style.css
     ]
   end
 end

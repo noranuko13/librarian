@@ -32,7 +32,7 @@ module Bookbinding
 
     # @return [String]
     def workbench_dir
-      Constant::WORKBENCH_DIR
+      File.join(Constant::WORKBENCH_DIR, @args[:shelve])
     end
   end
 end

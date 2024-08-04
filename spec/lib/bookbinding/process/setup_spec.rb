@@ -25,7 +25,7 @@ RSpec.describe Bookbinding::Process::Setup do
 
     it 'receive reset_dir with workbench' do
       run
-      expect(filesystem_instance_double).to have_received(:reset_dir).once.with('tmp/workbench')
+      expect(filesystem_instance_double).to have_received(:reset_dir).once.with('tmp/workbench/repository/inspect')
     end
   end
 end

@@ -19,7 +19,7 @@ RSpec.describe Bookbinding::Process::Review do
   describe '#run' do
     context 'when failure' do
       it 'raise ReviewError' do
-        FileUtils.rm_rf 'tmp/workbench/config.yml'
+        FileUtils.rm_rf 'tmp/workbench/repository/inspect/config.yml'
         expect { run }.to raise_error Bookbinding::Process::Review::ReviewError,
                                       'Re:VIEWの実行に失敗しました'
       end
@@ -29,7 +29,7 @@ RSpec.describe Bookbinding::Process::Review do
   describe '#review_rake' do
     context 'when pdf' do
       it 'pdf created' do
-        f = 'tmp/workbench/inspect.pdf'
+        f = 'tmp/workbench/repository/inspect/inspect.pdf'
         expect { run }.to change { File.exist?(f) }.from(false).to(true)
       end
     end

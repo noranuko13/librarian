@@ -18,7 +18,7 @@ RSpec.describe Bookbinding::Process::Merge do
   describe '#merge_config' do
     it 'merged config.yml' do
       run
-      config = YAML.load_file('tmp/workbench/config.yml')
+      config = YAML.load_file('tmp/workbench/repository/inspect/config.yml')
       expect(config['review_version']).to eq 5.0
       expect(config['bookname']).to eq 'inspect'
     end
@@ -27,7 +27,7 @@ RSpec.describe Bookbinding::Process::Merge do
   describe '#merge_style' do
     it 'merged style.css' do
       run
-      css = File.read('tmp/workbench/style.css')
+      css = File.read('tmp/workbench/repository/inspect/style.css')
       expect(css).to include '/*! [jackets/tech] */'
       expect(css).to include '/*! [shelves/repository/inspect] */'
     end
