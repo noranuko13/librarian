@@ -12,7 +12,7 @@ module Bookbinding
 
       def run
         @termout.debug 'Setup'
-        @filesystem.reset_dir Constant::DIST_DIR
+        @filesystem.reset_dir @arguments.dist_dir
         @filesystem.reset_dir @arguments.workbench_dir
       end
     end

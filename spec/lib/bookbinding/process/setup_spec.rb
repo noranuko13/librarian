@@ -20,7 +20,7 @@ RSpec.describe Bookbinding::Process::Setup do
   describe '#run' do
     it 'receive reset_dir with dist' do
       run
-      expect(filesystem_instance_double).to have_received(:reset_dir).once.with('dist')
+      expect(filesystem_instance_double).to have_received(:reset_dir).once.with('dist/repository/inspect')
     end
 
     it 'receive reset_dir with workbench' do
