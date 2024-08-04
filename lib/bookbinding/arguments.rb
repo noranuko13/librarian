@@ -6,7 +6,7 @@ module Bookbinding
 
     NAMES = %i[shelve jacket type].freeze
     REQUIRED_ARGS = %i[shelve jacket].freeze
-    ALLOWED_TYPES = %i[pdf].freeze
+    ALLOWED_TYPES = %i[pdf text].freeze
 
     # @param [Rake::TaskArguments] args
     def initialize(args)

@@ -5,4 +5,9 @@ namespace :bookbinding do
   task :pdf, Bookbinding::Arguments::NAMES do |_, args|
     Bookbinding::Command.new(args).execute
   end
+
+  desc 'Bind TEXT'
+  task :text, Bookbinding::Arguments::NAMES do |_, args|
+    Bookbinding::Command.new(args).execute
+  end
 end

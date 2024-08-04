@@ -29,6 +29,7 @@ RSpec.describe Bookbinding::Arguments do
 
     it_behaves_like 'valid arguments', %w[shelve jacket]
     it_behaves_like 'valid arguments', %w[shelve jacket pdf]
+    it_behaves_like 'valid arguments', %w[shelve jacket text]
 
     it_behaves_like 'invalid arguments', []
     it_behaves_like 'invalid arguments', [nil, 'jacket']
