@@ -6,6 +6,7 @@ module Bookbinding
     JACKETS_DIR = 'jackets'
     SHELVES_DIR = 'shelves'
     UPGRADE_DIR = 'upgrade'
+    # TODO: Independent directory for each test
     WORKBENCH_DIR = 'tmp/workbench'
   end
 end

@@ -11,6 +11,8 @@ module Bookbinding
     # @param [Rake::TaskArguments] args
     def initialize(args)
       @args = args.with_defaults({ shelve: '', jacket: '', type: 'pdf' })
+      # TODO: Setup dry-validation
+      # https://dry-rb.org/gems/dry-validation/1.8/
       if REQUIRED_ARGS.any? { |key| @args[key].empty? }
         raise ArgumentsError, "Required arguments: #{REQUIRED_ARGS.join(', ')}"
       end
