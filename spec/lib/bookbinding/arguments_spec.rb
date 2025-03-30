@@ -47,4 +47,12 @@ RSpec.describe Bookbinding::Arguments do
       expect(jackets_dir).to eq 'jackets/tech'
     end
   end
+
+  describe '#workbench_dir' do
+    subject(:workbench_dir) { described_class.new(args).workbench_dir }
+
+    it 'get workbench directory' do
+      expect(workbench_dir).to eq 'tmp/workbench/repository/inspect'
+    end
+  end
 end
