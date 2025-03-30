@@ -11,6 +11,14 @@ RSpec.describe Bookbinding::Arguments do
   describe '#initialize' do
     subject(:init) { described_class.new(args) }
 
+    shared_examples 'valid arguments' do |values|
+      let(:values) { values }
+
+      it 'Success' do
+        expect { init }.not_to raise_error
+      end
+    end
+
     shared_examples 'invalid arguments' do |values|
       let(:values) { values }
 
@@ -19,9 +27,13 @@ RSpec.describe Bookbinding::Arguments do
       end
     end
 
+    it_behaves_like 'valid arguments', %w[shelve jacket]
+    it_behaves_like 'valid arguments', %w[shelve jacket pdf]
+
     it_behaves_like 'invalid arguments', []
     it_behaves_like 'invalid arguments', [nil, 'jacket']
     it_behaves_like 'invalid arguments', ['shelve', nil]
+    it_behaves_like 'invalid arguments', %w[shelve jacket type]
   end
 
   describe '#dist_dir' do
@@ -53,6 +65,14 @@ RSpec.describe Bookbinding::Arguments do
 
     it 'get workbench directory' do
       expect(workbench_dir).to eq 'tmp/workbench/repository/inspect'
+    end
+  end
+
+  describe '#type' do
+    subject(:type) { described_class.new(args).type }
+
+    it 'get type as symbol' do
+      expect(type).to eq :pdf
     end
   end
 end

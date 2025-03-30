@@ -16,7 +16,7 @@ module Bookbinding
 
       def run
         @termout.info 'Re:VIEWを実行します'
-        review_rake(:pdf)
+        review_rake(@arguments.type)
       end
 
       private
