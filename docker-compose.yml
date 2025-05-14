@@ -9,6 +9,6 @@ services:
       - .:/librarian
     tty: true
   resources:
-    image: nginx:1.27.4
+    image: nginx:1.27.5
     volumes:
       - ./shelves:/usr/share/nginx/html/shelves
