@@ -15,7 +15,7 @@ module Bookbinding
         Dir[
           "#{@arguments.workbench_dir}/**/*.{pdf,epub,html}",
           "#{@arguments.workbench_dir}/**/*{-pdf,-text,-idgxml}",
-          "#{@arguments.workbench_dir}/**/webroot",
+          "#{@arguments.workbench_dir}/**/webroot"
         ].each do |src|
           next if FileTest.directory?(src)
 
