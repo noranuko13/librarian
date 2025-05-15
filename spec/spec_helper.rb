@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 require 'simplecov'
-require 'bookbinding'
 
-SimpleCov.start
+SimpleCov.start do
+  load_profile 'test_frameworks'
+  track_files 'lib/**/*.rb'
+end
+
+require 'bookbinding'
 
 ## https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
