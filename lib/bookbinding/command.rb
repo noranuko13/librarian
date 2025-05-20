@@ -5,7 +5,7 @@ module Bookbinding
     # @param [Rake::TaskArguments] args
     def initialize(task, args)
       @termout = Termout.new
-      @task = task
+      @task = Bookbinding::Task.new(task)
       @arguments = Bookbinding::Arguments.new(args)
     end
 
@@ -14,7 +14,7 @@ module Bookbinding
       Process::Setup.new(@arguments).run
       Process::Collect.new(@arguments).run
       Process::Merge.new(@arguments).run
-      Process::Review.new(@arguments).run
+      Process::Review.new(@task, @arguments).run
       Process::Dist.new(@arguments).run
       @termout.success '製本を終了します'
     end

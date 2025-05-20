@@ -10,11 +10,13 @@ RSpec.describe Bookbinding::Process::Dist do
   include_context 'without stdout'
   include_context 'shared arguments'
 
+  let(:task) { Bookbinding::Task.new(Rake.application['bookbinding:pdf']) }
+
   before do
     Bookbinding::Process::Setup.new(arguments).run
     Bookbinding::Process::Collect.new(arguments).run
     Bookbinding::Process::Merge.new(arguments).run
-    Bookbinding::Process::Review.new(arguments).run
+    Bookbinding::Process::Review.new(task, arguments).run
   end
 
   describe '#run' do

@@ -7,16 +7,18 @@ module Bookbinding
     class Review
       class ReviewError < StandardError; end
 
+      # @param [Bookbinding::Task] task
       # @param [Bookbinding::Arguments] arguments
-      def initialize(arguments)
+      def initialize(task, arguments)
         @termout = Termout.new
         @filesystem = Filesystem.new
+        @task = task
         @arguments = arguments
       end
 
       def run
         @termout.info 'Re:VIEWを実行します'
-        review_rake(:pdf)
+        review_rake(@task.type)
       end
 
       private

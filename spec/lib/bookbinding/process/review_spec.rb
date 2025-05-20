@@ -5,7 +5,9 @@ require 'support/contexts/shared_arguments'
 require 'support/contexts/without_stdout'
 
 RSpec.describe Bookbinding::Process::Review do
-  subject(:run) { described_class.new(arguments).run }
+  subject(:run) { described_class.new(task, arguments).run }
+
+  let(:task) { Bookbinding::Task.new(Rake.application['bookbinding:pdf']) }
 
   include_context 'without stdout'
   include_context 'shared arguments'
