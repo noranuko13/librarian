@@ -16,7 +16,7 @@ RSpec.describe Bookbinding::Verify::ArgumentsContract do
   end
 
   describe '#call' do
-    subject(:result) { contract.call(args.to_h) }
+    subject(:result) { contract.call(rake_args.to_h) }
 
     include_context 'shared arguments'
 

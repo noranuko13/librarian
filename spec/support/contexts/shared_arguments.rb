@@ -5,7 +5,7 @@ RSpec.shared_context 'shared arguments' do
   let(:missing_shelve) { [nil, 'jacket'] }
   let(:missing_jacket) { ['shelve', nil] }
 
-  let(:args) { Rake::TaskArguments.new(Bookbinding::Arguments::NAMES, values) }
+  let(:rake_args) { Rake::TaskArguments.new(Bookbinding::Arguments::NAMES, values) }
 
-  let(:arguments) { Bookbinding::Arguments.new(args) }
+  let(:arguments) { Bookbinding::Arguments.new(rake_args) }
 end

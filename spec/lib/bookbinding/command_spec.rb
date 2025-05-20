@@ -11,7 +11,7 @@ RSpec.describe Bookbinding::Command do
   include_context 'shared arguments'
 
   describe '#execute' do
-    subject(:execute) { described_class.new(rake_task, args).execute }
+    subject(:execute) { described_class.new(rake_task, rake_args).execute }
 
     context 'when [repository/inspect,tech]' do
       it 'Success' do

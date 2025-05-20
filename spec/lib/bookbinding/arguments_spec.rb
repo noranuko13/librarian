@@ -9,7 +9,7 @@ RSpec.describe Bookbinding::Arguments do
   include_context 'shared arguments'
 
   describe '#initialize' do
-    subject(:init) { described_class.new(args) }
+    subject(:init) { described_class.new(rake_args) }
 
     it 'Success' do
       expect { init }.not_to raise_error
@@ -35,7 +35,7 @@ RSpec.describe Bookbinding::Arguments do
   end
 
   describe '#dist_dir' do
-    subject(:dist_dir) { described_class.new(args).dist_dir }
+    subject(:dist_dir) { described_class.new(rake_args).dist_dir }
 
     it 'get dist directory' do
       expect(dist_dir).to eq 'dist/repository/inspect'
@@ -43,7 +43,7 @@ RSpec.describe Bookbinding::Arguments do
   end
 
   describe '#shelves_dir' do
-    subject(:shelves_dir) { described_class.new(args).shelves_dir }
+    subject(:shelves_dir) { described_class.new(rake_args).shelves_dir }
 
     it 'get shelves directory' do
       expect(shelves_dir).to eq 'shelves/repository/inspect'
@@ -51,7 +51,7 @@ RSpec.describe Bookbinding::Arguments do
   end
 
   describe '#jackets_dir' do
-    subject(:jackets_dir) { described_class.new(args).jackets_dir }
+    subject(:jackets_dir) { described_class.new(rake_args).jackets_dir }
 
     it 'get jackets directory' do
       expect(jackets_dir).to eq 'jackets/tech'
@@ -59,7 +59,7 @@ RSpec.describe Bookbinding::Arguments do
   end
 
   describe '#workbench_dir' do
-    subject(:workbench_dir) { described_class.new(args).workbench_dir }
+    subject(:workbench_dir) { described_class.new(rake_args).workbench_dir }
 
     it 'get workbench directory' do
       expect(workbench_dir).to eq 'tmp/workbench/repository/inspect'
