@@ -6,17 +6,17 @@ require 'support/contexts/shared_task'
 require 'support/contexts/shared_arguments'
 
 RSpec.describe Bookbinding::Process::Dist do
-  subject(:run) { described_class.new(arguments).run }
+  subject(:run) { described_class.new(args).run }
 
   include_context 'without stdout'
   include_context 'shared task'
   include_context 'shared arguments'
 
   before do
-    Bookbinding::Process::Setup.new(arguments).run
-    Bookbinding::Process::Collect.new(arguments).run
-    Bookbinding::Process::Merge.new(arguments).run
-    Bookbinding::Process::Review.new(task, arguments).run
+    Bookbinding::Process::Setup.new(args).run
+    Bookbinding::Process::Collect.new(args).run
+    Bookbinding::Process::Merge.new(args).run
+    Bookbinding::Process::Review.new(task, args).run
   end
 
   describe '#run' do

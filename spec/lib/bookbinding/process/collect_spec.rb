@@ -5,13 +5,13 @@ require 'support/contexts/shared_arguments'
 require 'support/contexts/without_stdout'
 
 RSpec.describe Bookbinding::Process::Collect do
-  subject(:run) { described_class.new(arguments).run }
+  subject(:run) { described_class.new(args).run }
 
   include_context 'without stdout'
   include_context 'shared arguments'
 
   before do
-    Bookbinding::Process::Setup.new(arguments).run
+    Bookbinding::Process::Setup.new(args).run
   end
 
   shared_examples 'collector' do

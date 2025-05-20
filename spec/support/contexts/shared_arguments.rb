@@ -7,5 +7,5 @@ RSpec.shared_context 'shared arguments' do
 
   let(:rake_args) { Rake::TaskArguments.new(Bookbinding::Arguments::NAMES, values) }
 
-  let(:arguments) { Bookbinding::Arguments.new(rake_args) }
+  let(:args) { Bookbinding::Arguments.new(rake_args) }
 end
