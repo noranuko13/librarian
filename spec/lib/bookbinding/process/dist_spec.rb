@@ -21,7 +21,7 @@ RSpec.describe Bookbinding::Process::Dist do
 
   describe '#run' do
     context 'when pdf' do
-      let(:task_type) { :pdf }
+      let(:task_type) { Bookbinding::Task::TYPE_PDF }
 
       it 'pdf copied' do
         f = 'dist/repository/inspect/inspect.pdf'
@@ -30,7 +30,7 @@ RSpec.describe Bookbinding::Process::Dist do
     end
 
     context 'when text' do
-      let(:task_type) { :text }
+      let(:task_type) { Bookbinding::Task::TYPE_TEXT }
 
       let(:files) do
         %w[

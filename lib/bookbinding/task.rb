@@ -2,6 +2,9 @@
 
 module Bookbinding
   class Task
+    TYPE_PDF = :pdf
+    TYPE_TEXT = :text
+
     # @param [Rake::Task] task
     def initialize(task)
       @task = task

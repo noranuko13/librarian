@@ -18,7 +18,7 @@ RSpec.describe Bookbinding::Task do
     subject(:type) { described_class.new(rake_task).type }
 
     describe 'pdf' do
-      let(:task_type) { :pdf }
+      let(:task_type) { Bookbinding::Task::TYPE_PDF }
 
       it 'get type :pdf' do
         expect(type).to eq task_type
@@ -26,7 +26,7 @@ RSpec.describe Bookbinding::Task do
     end
 
     describe 'text' do
-      let(:task_type) { :text }
+      let(:task_type) { Bookbinding::Task::TYPE_TEXT }
 
       it 'get type :text' do
         expect(type).to eq task_type

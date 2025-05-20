@@ -2,12 +2,12 @@
 
 namespace :bookbinding do
   desc 'Bind PDF'
-  task :pdf, Bookbinding::Arguments::NAMES do |task, args|
+  task Bookbinding::Task::TYPE_PDF, Bookbinding::Arguments::NAMES do |task, args|
     Bookbinding::Command.new(task, args).execute
   end
 
   desc 'Bind TEXT'
-  task :text, Bookbinding::Arguments::NAMES do |task, args|
+  task Bookbinding::Task::TYPE_TEXT, Bookbinding::Arguments::NAMES do |task, args|
     Bookbinding::Command.new(task, args).execute
   end
 end

@@ -9,7 +9,7 @@ RSpec.describe 'bookbinding:text', type: :task do
   include_context 'shared task'
 
   context 'when valid params' do
-    let(:task_type) { :text }
+    let(:task_type) { Bookbinding::Task::TYPE_TEXT }
 
     it 'Success' do
       expect { rake_task.invoke('repository/inspect', 'tech') }.not_to raise_error
