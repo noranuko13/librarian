@@ -11,17 +11,27 @@ RSpec.describe Bookbinding::Arguments do
   describe '#initialize' do
     subject(:init) { described_class.new(args) }
 
-    shared_examples 'invalid arguments' do |values|
-      let(:values) { values }
+    it 'Success' do
+      expect { init }.not_to raise_error
+    end
 
+    shared_examples 'invalid arguments' do
       it 'raise ArgumentsError' do
-        expect { init }.to raise_error(Bookbinding::Arguments::ArgumentsError)
+        expect { init }.to raise_error Bookbinding::Arguments::ArgumentsError
       end
     end
 
-    it_behaves_like 'invalid arguments', []
-    it_behaves_like 'invalid arguments', [nil, 'jacket']
-    it_behaves_like 'invalid arguments', ['shelve', nil]
+    context 'without shelve' do
+      let(:values) { missing_shelve }
+
+      it_behaves_like 'invalid arguments'
+    end
+
+    context 'without jacket' do
+      let(:values) { missing_jacket }
+
+      it_behaves_like 'invalid arguments'
+    end
   end
 
   describe '#dist_dir' do
