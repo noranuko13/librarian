@@ -8,8 +8,7 @@ module Bookbinding
 
     # @param [Rake::TaskArguments] args
     def initialize(args)
-      @args = args.with_defaults({ shelve: '', jacket: '' })
-      raise ArgumentsError, "Required arguments: #{NAMES.join(', ')}" if @args[:shelve].empty? || @args[:jacket].empty?
+      @args = verify(args).to_h
 
       @termout = Termout.new
       @termout.debug '@args', @args.to_s
@@ -33,6 +32,17 @@ module Bookbinding
     # @return [String]
     def workbench_dir
       File.join(Constant::WORKBENCH_DIR, @args[:shelve])
+    end
+
+    private
+
+    # @param [Rake::TaskArguments] args
+    # @return [Dry::Validation::Result]
+    def verify(args)
+      result = Verify::ArgumentsContract.new.call(args.to_h)
+      raise ArgumentsError, result.errors.to_h if result.failure?
+
+      result
     end
   end
 end

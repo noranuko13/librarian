@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'bookbinding/verify/arguments_contract'
+
 require_relative 'bookbinding/process/collect'
 require_relative 'bookbinding/process/dist'
 require_relative 'bookbinding/process/merge'
