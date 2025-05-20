@@ -2,15 +2,15 @@
 
 require 'rake_helper'
 require 'support/contexts/without_stdout'
+require 'support/contexts/shared_task'
 
 RSpec.describe 'bookbinding:pdf', type: :task do
   include_context 'without stdout'
+  include_context 'shared task'
 
   context 'when valid params' do
-    let(:task) { Rake.application['bookbinding:pdf'] }
-
     it 'Success' do
-      expect { task.invoke('repository/inspect', 'tech') }.not_to raise_error
+      expect { rake_task.invoke('repository/inspect', 'tech') }.not_to raise_error
     end
   end
 end

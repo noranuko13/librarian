@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 require 'rake_helper'
+require 'support/contexts/shared_task'
 
 RSpec.describe Bookbinding::Task do
-  describe '#initialize' do
-    subject(:init) { described_class.new(task) }
+  include_context 'shared task'
 
-    let(:task) { Rake.application['bookbinding:pdf'] }
+  describe '#initialize' do
+    subject(:init) { described_class.new rake_task }
 
     it 'Success' do
       expect { init }.not_to raise_error
@@ -14,9 +15,7 @@ RSpec.describe Bookbinding::Task do
   end
 
   describe '#type' do
-    subject(:type) { described_class.new(task).type }
-
-    let(:task) { Rake.application["bookbinding:#{task_type}"] }
+    subject(:type) { described_class.new(rake_task).type }
 
     describe 'pdf' do
       let(:task_type) { :pdf }

@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 require 'rake_helper'
-require 'support/contexts/shared_arguments'
 require 'support/contexts/without_stdout'
+require 'support/contexts/shared_task'
+require 'support/contexts/shared_arguments'
 
 RSpec.describe Bookbinding::Process::Review do
   subject(:run) { described_class.new(task, arguments).run }
 
-  let(:task) { Bookbinding::Task.new(Rake.application['bookbinding:pdf']) }
-
   include_context 'without stdout'
+  include_context 'shared task'
   include_context 'shared arguments'
 
   before do
