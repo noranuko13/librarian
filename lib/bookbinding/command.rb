@@ -3,8 +3,9 @@
 module Bookbinding
   class Command
     # @param [Rake::TaskArguments] args
-    def initialize(args)
+    def initialize(task, args)
       @termout = Termout.new
+      @task = task
       @arguments = Bookbinding::Arguments.new(args)
     end
 

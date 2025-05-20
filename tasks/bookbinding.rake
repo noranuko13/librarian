@@ -2,7 +2,7 @@
 
 namespace :bookbinding do
   desc 'Bind PDF'
-  task :pdf, Bookbinding::Arguments::NAMES do |_, args|
-    Bookbinding::Command.new(args).execute
+  task :pdf, Bookbinding::Arguments::NAMES do |task, args|
+    Bookbinding::Command.new(task, args).execute
   end
 end
