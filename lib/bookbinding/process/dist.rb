@@ -14,7 +14,8 @@ module Bookbinding
         @termout.info '生成物をdistに配置します'
         Dir[
           "#{@arguments.workbench_dir}/**/*.{pdf,epub,html}",
-          "#{@arguments.workbench_dir}/**/*{-pdf,-text,-idgxml}",
+          "#{@arguments.workbench_dir}/**/*-text/*.txt",
+          "#{@arguments.workbench_dir}/**/*{-pdf,-idgxml}",
           "#{@arguments.workbench_dir}/**/webroot"
         ].each do |src|
           next if FileTest.directory?(src)
