@@ -15,7 +15,7 @@
       <excludeFolder url="file://$MODULE_DIR$/jackets" />
       <excludeFolder url="file://$MODULE_DIR$/shelves" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Remote: ruby-3.1.2-p20" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.3, Remote: ruby-3.1.2-p20) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bigdecimal (v3.1.9, Remote: ruby-3.1.2-p20) [gem]" level="application" />
@@ -67,9 +67,5 @@
     <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v3.1.4, Remote: ruby-3.1.2-p20) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicode-emoji (v4.0.4, Remote: ruby-3.1.2-p20) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.6.18, Remote: ruby-3.1.2-p20) [gem]" level="application" />
-  </component>
-  <component name="RModuleSettingsStorage">
-    <LOAD_PATH number="2" string0="$MODULE_DIR$/spec" string1="$MODULE_DIR$/lib" />
-    <I18N_FOLDERS number="0" />
   </component>
 </module>
